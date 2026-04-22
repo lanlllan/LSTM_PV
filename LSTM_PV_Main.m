@@ -31,7 +31,7 @@ if ~isfile(dataFile)
     error('未找到数据文件：%s，请确认文件在当前目录下。', dataFile);
 end
 
-T = readtable(dataFile);
+T = readtable(dataFile, 'VariableNamingRule', 'preserve');
 fprintf('    共读取 %d 条记录，时间范围：%s ~ %s\n', ...
     height(T), string(T.date(1)), string(T.date(end)));
 
